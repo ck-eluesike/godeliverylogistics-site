@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoDelivery Logistics - Same-Day Delivery in Abuja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mint: #abedd8;
+            --black: #000;
+            --dark-gray: #1f2937;
+            --light-gray: #f3f4f6;
+            --accent: #059669;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--mint);
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--mint);
+            padding: 16px 0;
+            border-bottom: 3px solid var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.65;
+        }
+
+        .cta-btn {
+            background-color: var(--black);
+            color: var(--mint);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 22px;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--black);
+            color: var(--mint);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--black);
+            padding: 16px 40px;
+            border: 3px solid var(--black);
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--black);
+            color: var(--mint);
+        }
+
+        /* Problem Section */
+        .problems {
+            background-color: var(--white);
+            padding: 80px 20px;
+            margin: 40px 0;
+        }
+
+        .problems-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 5px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .problem-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        /* Tracking Value Prop Section */
+        .tracking {
+            background-color: var(--mint);
+            padding: 80px 20px;
+        }
+
+        .tracking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tracking-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .tracking-content p {
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .tracking-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            min-width: 40px;
+            margin-top: 2px;
+        }
+
+        .feature-text h4 {
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .tracking-visual {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 3px solid var(--black);
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tracking-visual h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .gps-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .gps-text {
+            font-size: 14px;
+            color: var(--dark-gray);
+            max-width: 280px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            padding: 40px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            border-top: 5px solid var(--black);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Offers Section */
+        .offers {
+            background-color: var(--mint);
+            padding: 80px 20px;
+        }
+
+        .offers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .offer-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 3px solid var(--black);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .offer-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--mint);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .offer-card h3 {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .offer-description {
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .offer-highlight {
+            background-color: var(--mint);
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        .offer-highlight p {
+            font-weight: 700;
+            color: var(--black);
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .offer-cta {
+            background-color: var(--black);
+            color: var(--mint);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            width: 100%;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .offer-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Startup Section */
+        .tech-edge {
+            background-color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .tech-edge-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tech-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .tech-content p {
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tech-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .tech-item-icon {
+            font-size: 20px;
+            min-width: 30px;
+            margin-top: 4px;
+        }
+
+        .tech-item-text {
+            font-size: 15px;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .tech-visual {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            border: 3px solid var(--black);
+            text-align: center;
+        }
+
+        .tech-visual h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat {
+            background-color: var(--mint);
+            padding: 24px;
+            border-radius: 6px;
+            border: 2px solid var(--black);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--dark-gray);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background-color: var(--black);
+            color: var(--mint);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .final-cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background-color: var(--mint);
+            color: var(--black);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--mint);
+            padding: 16px 40px;
+            border: 3px solid var(--mint);
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--mint);
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--mint);
+            border-top: 3px solid var(--black);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.65;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            font-size: 20px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.65;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .tracking-container,
+            .tech-edge-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .tracking-content h2,
+            .tech-content h2 {
+                font-size: 32px;
+            }
+
+            .final-cta h2 {
+                font-size: 36px;
+            }
+
+            .problems-grid,
+            .services-grid,
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 40px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            header {
+                padding: 12px 0;
+            }
+
+            .hero {
+                padding: 40px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .problems,
+            .services,
+            .offers,
+            .tracking,
+            .tech-edge,
+            .final-cta {
+                padding: 50px 20px;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-light,
+            .btn-outline {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.png" alt="GoDelivery Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problems">Problem</a></li>
+                <li><a href="#tracking">Tracking</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#offers">Offers</a></li>
+            </ul>
+            <a href="contact.html" class="cta-btn">Partner With Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Same-Day Delivery That Actually Works</h1>
+        <p class="subtitle">GPS-tracked, professionally delivered, problem-solved. For restaurants, pharmacies, and e-commerce that can't afford slow delivery.</p>
+        <div class="hero-ctas">
+            <a href="contact.html" class="btn-primary">Start Your Free Trial</a>
+            <a href="#problems" class="btn-secondary">See How It Works</a>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems" id="problems">
+        <div class="problems-container">
+            <h2 class="section-title">Your Delivery Problem</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🍔</div>
+                    <h3>Restaurants</h3>
+                    <p>Cold food kills repeat orders. Your customers are ready to buy NOW—slow delivery means they go hungry elsewhere. You lose the sale, not just this order.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💊</div>
+                    <h3>Pharmacies</h3>
+                    <p>Medical emergencies don't wait for 3-day delivery. Your patients need help fast. Unreliable partners damage your reputation and patient trust.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👕</div>
+                    <h3>E-Commerce</h3>
+                    <p>Your customer's buying impulse lasts minutes, not days. Slow delivery = abandoned carts. Same-day shipping means conversion, not abandonment.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">✨</div>
+                    <h3>Luxury Retail</h3>
+                    <p>Your premium products deserve professional handling. Generic riders in random outfits tarnish your brand. Your delivery should reflect your quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Value Prop -->
+    <section class="tracking" id="tracking">
+        <div class="tracking-container">
+            <div class="tracking-content">
+                <h2>Real-Time Tracking Changes Everything</h2>
+                <p>Not just for you—for your customers. They get a live GPS link. They see exactly where their order is. They feel in control.</p>
+                
+                <div class="tracking-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📍</div>
+                        <div class="feature-text">
+                            <h4>Live GPS Tracking</h4>
+                            <p>Customers get a WhatsApp link showing exactly where their delivery is in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <h4>Weekly Analytics</h4>
+                            <p>See your peak hours, popular areas, repeat customers. Use this data to optimize inventory, staff, and marketing.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-text">
+                            <h4>70% Fewer Support Calls</h4>
+                            <p>When customers can track their order, they stop asking "Where's my delivery?" You save time and money.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-text">
+                            <h4>Conversion Boost</h4>
+                            <p>Transparent delivery builds trust. Customers feel confident ordering again, increasing lifetime value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracking-visual">
+                <h3>Live Tracking in Action</h3>
+                <div class="gps-icon">📍</div>
+                <p class="gps-text">Customer receives WhatsApp link with live rider location, ETA, and delivery status—no guessing, no anxiety, no lost orders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2 class="section-title">What We Actually Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>22-Min Average Delivery</h3>
+                    <p>Dedicated operations with strategic positioning mean we're always within reach. No waiting. Your order reaches customers fast, while it's still hot/urgent.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎖️</div>
+                    <h3>Professional Branding</h3>
+                    <p>Riders in branded safety vests with our minimalist logo. Your customers see quality, not a random okada guy. Your delivery reflects your brand.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>GPS-Tracked Fleet</h3>
+                    <p>Every bike equipped with DAGPS trackers. Real-time visibility, full transparency. You always know where your deliveries are.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Tech-Enabled Dispatch</h3>
+                    <p>AI-optimized routes. Not WhatsApp-based like competitors. Smarter routing = faster deliveries, fewer delays, happier customers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Weekly Analytics Dashboard</h3>
+                    <p>Total deliveries, average delivery time, failed orders, peak hours heatmap, customer clustering, repeat rate, and actionable recommendations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Locked Pricing for 6 Months</h3>
+                    <p>Early partners get rate stability. No surprise price hikes. We succeed when you succeed, not by raising costs later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers" id="offers">
+        <div class="offers-container">
+            <h2 class="section-title">Irresistible Offers for Your Business</h2>
+            <div class="offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card">
+                    <div class="offer-badge">For Small Businesses</div>
+                    <h3>3-Day Free Trial</h3>
+                    <p class="offer-description">Perfect for emerging delivery businesses or restaurants testing a new partner.</p>
+                    <div class="offer-highlight">
+                        <p>All deliveries completely free for 3 consecutive days</p>
+                    </div>
+                    <ul style="text-align: left; font-size: 14px; color: var(--dark-gray); line-height: 1.8; margin-bottom: 20px;">
+                        <li>✓ Zero commitment, no contracts</li>
+                        <li>✓ Minimum 15 orders during trial</li>
+                        <li>✓ Full tracking + analytics included</li>
+                        <li>✓ If not satisfied, we part as friends</li>
+                    </ul>
+                    <a href="contact.html" class="offer-cta">Start Trial Now</a>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="offer-card">
+                    <div class="offer-badge">Most Popular</div>
+                    <h3>20-Order Test Drive</h3>
+                    <p class="offer-description">Best for established businesses ready to compare us directly to competitors.</p>
+                    <div class="offer-highlight">
+                        <p>50% off first 20 deliveries</p>
+                    </div>
+                    <ul style="text-align: left; font-size: 14px; color: var(--dark-gray); line-height: 1.8; margin-bottom: 20px;">
+                        <li>✓ Test us risk-free</li>
+                        <li>✓ If we don't beat your current provider's speed → 21st delivery free</li>
+                        <li>✓ No long-term contract required</li>
+                        <li>✓ Full analytics from day 1</li>
+                    </ul>
+                    <a href="contact.html" class="offer-cta">Start Now</a>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="offer-card">
+                    <div class="offer-badge">For High-Volume</div>
+                    <h3>Volume Partnership</h3>
+                    <p class="offer-description">For popular restaurants and high-velocity e-commerce (100+ orders/month).</p>
+                    <div class="offer-highlight">
+                        <p>15% discount + dedicated peak-hour rider</p>
+                    </div>
+                    <ul style="text-align: left; font-size: 14px; color: var(--dark-gray); line-height: 1.8; margin-bottom: 20px;">
+                        <li>✓ Rider stationed during your peak hours (6-9 PM)</li>
+                        <li>✓ Priority dispatch during rush times</li>
+                        <li>✓ Free weekly analytics + optimization calls</li>
+                        <li>✓ 3-month minimum, then month-to-month</li>
+                    </ul>
+                    <a href="contact.html" class="offer-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Startup Edge -->
+    <section class="tech-edge">
+        <div class="tech-edge-container">
+            <div class="tech-content">
+                <h2>Why We're Different (We're a Startup, Not a Corporation)</h2>
+                <p>Glovo and Uber Eats don't care about individual restaurants. They optimize for themselves. We optimize for you—because you make us profitable.</p>
+                
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <div class="tech-item-icon">🎯</div>
+                        <div class="tech-item-text">Density Over Scale: We focus on strategic presence and rapid response time, not spreading thin across the entire city.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon">🤖</div>
+                        <div class="tech-item-text">AI-Optimized Dispatch: Smart routing, not WhatsApp chaos. Faster = fewer delays, happier customers.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon">📊</div>
+                        <div class="tech-item-text">Data-Driven: Weekly analytics don't just measure performance—they guide your business decisions.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon">🤝</div>
+                        <div class="tech-item-text">Partner Mindset: Your success is our success. Long-term relationships, not transaction volume.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon">🔒</div>
+                        <div class="tech-item-text">Transparent Pricing: No hidden fees. Rates locked for early partners. We grow together.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-visual">
+                <h3>By The Numbers</h3>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">Minutes Average Delivery</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">GPS Tracked</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Long-term Contracts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Partner Potential</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container">
+            <h2>Ready to Stop Losing Orders to Slow Delivery?</h2>
+            <p>Choose an offer, pick a day, we'll prove it. Zero risk, zero contracts, 100% transparency.</p>
+            <div class="final-cta-buttons">
+                <a href="contact.html" class="btn-light">Start Your Trial</a>
+                <a href="contact.html" class="btn-outline">Talk to Our Founders</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p class="footer-text">© 2025 GoDelivery Logistics Services. Registered in Abuja, Nigeria.</p>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#offers">Offers</a>
+                <a href="mailto:partnerships@godelivery.ng">Contact</a>
+                <a href="#tracking">How It Works</a>
+            </div>
+            <div class="footer-social">
+                <span class="social-icon">📱</span>
+                <span class="social-icon">💬</span>
+                <span class="social-icon">🔗</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling if needed
+        document.querySelectorAll('.offer-cta').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Allows navigation to contact.html
+            });
+        });
+    </script>
+</body>
+</html>
