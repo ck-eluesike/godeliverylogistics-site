@@ -293,7 +293,6 @@
 
         <!-- Contact Form -->
         <form class="contact-form" action="https://formspree.io/f/xykkkgzk" method="POST">
-            <input type="hidden" name="_next" value="https://godeliverylogistics.com/success.html">
             <!-- Name Field -->
             <div class="form-group">
                 <label for="name">Your Name *</label>
@@ -363,34 +362,5 @@
     <footer>
         <p class="footer-text">© 2025 GoDelivery Logistics Services. Registered in Abuja, Nigeria.</p>
     </footer>
-    <script>
-    const form = document.querySelector('.contact-form');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        
-        fetch('https://formspree.io/f/xykkkgzk', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Redirect to your success page
-                window.location.href = 'success.html';
-            } else {
-                alert('Oops! There was a problem submitting your form. Please try again.');
-            }
-        })
-        .catch(error => {
-            alert('Oops! There was a problem submitting your form. Please try again.');
-        });
-    });
-</script>
-
 </body>
 </html>
